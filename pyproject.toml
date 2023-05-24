@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=65.5.1", "versioneer[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oxlearn"
+description = "Simple machine learning tic tac toe program."
+requires-python = ">= 3.11"
+dependencies = ["colorama>=0.4.6"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+develop = [
+    "black >= 23.3.0",
+    "pytest >= 7.3.1",
+]
+
+[tool.black]
+target-version = ["py311"]
+preview = true
+
+[tool.pytest.ini_options]
+minversion = "7.3.1"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.versioneer]
+VCS = "git"
+style = "pep440"
+versionfile_source = "src/oxlearn/_version.py"
+versionfile_build = "oxlearn/_version.py"
+tag_prefix = ""
