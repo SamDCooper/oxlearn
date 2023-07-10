@@ -126,7 +126,7 @@ def parse_args(available_players: list[str]) -> argparse.Namespace:
         "--loglevel",
         choices=["INFO", "WARNING", "ERROR"],
         default="WARNING",
-        help="Format to pass to logging module",
+        help="Minimum level to log",
     )
     parser.add_argument(
         "--training-input",
